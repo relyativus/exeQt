@@ -1,5 +1,4 @@
 rootProject.name = 'exeqt'
 include 'core'
 include 'rxjava-adapter'
-include 'rx-common'
 

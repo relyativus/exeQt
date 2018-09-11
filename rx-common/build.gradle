@@ -1,3 +1,0 @@
-dependencies {
-    compile group: 'org.reactivestreams', name: 'reactive-streams', version: '1.0.2'
-}
