@@ -1,0 +1,7 @@
+dependencies {
+    compile project(':rx-common')
+    compile project(':core')
+    // https://mvnrepository.com/artifact/io.reactivex.rxjava2/rxjava
+    compile group: 'io.reactivex.rxjava2', name: 'rxjava', version: '2.2.2'
+
+}
