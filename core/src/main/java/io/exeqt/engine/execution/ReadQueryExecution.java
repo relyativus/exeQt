@@ -1,6 +1,6 @@
 package io.exeqt.engine.execution;
 
-import io.exeqt.result.Row;
+import io.exeqt.engine.execution.result.Row;
 
 import java.util.concurrent.Flow.Publisher;
 

@@ -1,4 +1,4 @@
-package io.exeqt.result;
+package io.exeqt.engine.execution.result;
 
 import java.util.concurrent.Flow;
 

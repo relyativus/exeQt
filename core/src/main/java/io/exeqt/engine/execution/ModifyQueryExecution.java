@@ -1,6 +1,6 @@
 package io.exeqt.engine.execution;
 
-import io.exeqt.result.ModificationResult;
+import io.exeqt.engine.execution.result.ModificationResult;
 
 import java.util.concurrent.Flow.Publisher;
 
