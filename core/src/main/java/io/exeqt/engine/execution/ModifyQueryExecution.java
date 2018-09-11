@@ -1,6 +1,6 @@
 package io.exeqt.engine.execution;
 
-import io.exeqt.result.ModifyResult;
+import io.exeqt.result.ModificationResult;
 
 import java.util.concurrent.Flow.Publisher;
 
@@ -9,7 +9,7 @@ import java.util.concurrent.Flow.Publisher;
  *
  * @author anatolii vakaliuk
  */
-public interface ModifyQueryExecution<T extends Publisher<ModifyResult>> {
+public interface ModifyQueryExecution {
 
     /**
      * Executes modification query and return modification result
@@ -17,7 +17,7 @@ public interface ModifyQueryExecution<T extends Publisher<ModifyResult>> {
      * @param query query to execute
      * @return modification result stream.
      */
-    T modify(final Query query);
+    Publisher<ModificationResult> modify(final Query query);
 
     /**
      * Shortcut {@link #modify(Query)} for queries with prepared arguments but without special characteristics
@@ -26,7 +26,7 @@ public interface ModifyQueryExecution<T extends Publisher<ModifyResult>> {
      * @param arguments prepared arguments
      * @return modification result stream
      */
-    default T modify(final String query, Object[] arguments) {
+    default Publisher<ModificationResult> modify(final String query, Object[] arguments) {
         return modify(Query.builder().setSql(query).setArguments(arguments).build());
     }
 
@@ -36,7 +36,7 @@ public interface ModifyQueryExecution<T extends Publisher<ModifyResult>> {
      * @param query query string
      * @return modification result stream
      */
-    default T modify(final String query) {
+    default Publisher<ModificationResult> modify(final String query) {
         return modify(query, null);
     }
 

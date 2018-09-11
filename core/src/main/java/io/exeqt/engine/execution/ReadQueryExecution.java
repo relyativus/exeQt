@@ -9,14 +9,14 @@ import java.util.concurrent.Flow.Publisher;
  *
  * @author anatolii vakaliuk
  */
-public interface ReadQueryExecution<T extends Publisher<Row>> {
+public interface ReadQueryExecution {
     /**
      * Performs select based query
      *
      * @param query describes query needs to be executed
      * @return query result stream
      */
-    T read(final Query query);
+    Publisher<Row> read(final Query query);
 
     /**
      * Shortcut for {@link #read(Query)} for queries without parameters and special execution characteristics
@@ -24,7 +24,7 @@ public interface ReadQueryExecution<T extends Publisher<Row>> {
      * @param query query string
      * @return query result stream
      */
-    default T read(final String query) {
+    default Publisher<Row> read(final String query) {
         return read(query, null);
     }
 
@@ -35,7 +35,7 @@ public interface ReadQueryExecution<T extends Publisher<Row>> {
      * @param arguments prepared arguments
      * @return query result stream
      */
-    default T read(final String query, Object[] arguments) {
+    default Publisher<Row> read(final String query, Object[] arguments) {
         return read(Query.builder().setSql(query).setArguments(arguments).build());
     }
 
