@@ -1,10 +1,20 @@
 group 'io.exeqt'
 version '0.1.0'
 
-apply plugin: 'java'
-compileJava.options.encoding = 'UTF-8'
-sourceCompatibility = 1.8
+allprojects {
+    apply plugin: 'java'
+    compileJava.options.encoding = 'UTF-8'
+    sourceCompatibility = 1.9
 
-repositories {
-    mavenCentral()
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        // https://mvnrepository.com/artifact/org.projectlombok/lombok
+        compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
+
+    }
 }
+
+
