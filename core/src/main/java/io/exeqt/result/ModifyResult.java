@@ -1,11 +1,13 @@
 package io.exeqt.result;
 
-import lombok.Getter;
+import lombok.Value;
 
 /**
+ * Simple container for modification query result
+ *
  * @author anatolii vakaliuk
  */
-@Getter
+@Value
 public class ModifyResult {
     private int affectedRows;
 }
