@@ -1,6 +1,6 @@
 package io.exeqt.engine.execution.result;
 
-import java.util.concurrent.Flow;
+import java.util.concurrent.Flow.Publisher;
 
 /**
  * Simple container for {@code DML} query result
@@ -20,5 +20,5 @@ public interface ModificationResult {
      *
      * @return generated rows
      */
-    Flow.Publisher<Row> streamGeneratedKeys();
+    Publisher<Row> streamGeneratedKeys();
 }
