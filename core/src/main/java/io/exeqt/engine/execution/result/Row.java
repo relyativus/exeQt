@@ -34,14 +34,6 @@ public interface Row {
     long getLong(final String columnName);
 
     /**
-     * Returns primitive char value for column by name
-     *
-     * @param columnName column name for associated value
-     * @return char value
-     */
-    char getCharacter(final String columnName);
-
-    /**
      * Returns primitive double value for column by name
      *
      * @param columnName column name for associated value

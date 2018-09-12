@@ -1,5 +1,14 @@
+buildscript {
+    ext.vertxVersion = '3.5.3'
+}
 dependencies {
     compile project(':core')
+    compile project(':rxjava-adapter')
+    // https://mvnrepository.com/artifact/io.vertx/vertx-core
+    compile group: 'io.vertx', name: 'vertx-core', version: "${vertxVersion}"
     // https://mvnrepository.com/artifact/io.vertx/vertx-jdbc-client
-    compile group: 'io.vertx', name: 'vertx-jdbc-client', version: '3.5.3'
+    compile group: 'io.vertx', name: 'vertx-jdbc-client', version: "${vertxVersion}"
+    // https://mvnrepository.com/artifact/io.vertx/vertx-rx-java2
+    compile group: 'io.vertx', name: 'vertx-rx-java2', version: "${vertxVersion}"
+
 }
