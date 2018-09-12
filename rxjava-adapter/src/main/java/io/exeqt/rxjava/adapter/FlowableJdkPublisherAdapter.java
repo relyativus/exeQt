@@ -1,6 +1,7 @@
 package io.exeqt.rxjava.adapter;
 
 import io.reactivex.Flowable;
+import lombok.Value;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
@@ -11,17 +12,10 @@ import java.util.concurrent.Flow;
  *
  * @author anatolii vakaliuk
  */
+@Value(staticConstructor = "fromJdkPublisher")
 public class FlowableJdkPublisherAdapter<T> extends Flowable<T> implements Flow.Publisher<T> {
 
-    private Flow.Publisher<T> publisher;
-
-    private FlowableJdkPublisherAdapter(final Flow.Publisher<T> publisher) {
-        this.publisher = publisher;
-    }
-
-    public static  <R> FlowableJdkPublisherAdapter<R> fromJdkPublisher(final Flow.Publisher<R> publisher) {
-        return new FlowableJdkPublisherAdapter<>(publisher);
-    }
+    private final Flow.Publisher<T> publisher;
 
     @Override
     protected void subscribeActual(final Subscriber<? super T> rxSubscriber) {

@@ -13,7 +13,7 @@ public interface Completion {
      *
      * @param subscription completion subscription
      */
-    void onSubscribe(final CompletionSubscriber subscription);
+    void subscribe(final CompletionSubscriber subscription);
 
     /**
      * @see java.util.concurrent.Flow.Subscriber
@@ -33,6 +33,8 @@ public interface Completion {
      * @see java.util.concurrent.Flow.Subscription
      */
     interface CompletionSubscription {
+        boolean isCancelled();
+
         void cancel();
     }
 }

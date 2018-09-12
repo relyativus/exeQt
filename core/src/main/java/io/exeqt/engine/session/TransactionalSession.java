@@ -1,15 +1,12 @@
-package io.exeqt.engine.tx;
+package io.exeqt.engine.session;
 
-import io.exeqt.engine.execution.QueryExecution;
 import io.exeqt.engine.rx.Completion;
+import io.exeqt.engine.tx.TransactionAttributes;
 
 /**
- * Allows multiple query executions to act as database transaction. This is extension of {@link QueryExecution} which
- * additionally provides transaction attributes and transaction lifecycle
- *
  * @author anatolii vakaliuk
  */
-public interface TransactionalExecution extends QueryExecution {
+public interface TransactionalSession extends Session {
     /**
      * Provides metadata about underlying transaction
      *
