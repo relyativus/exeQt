@@ -1,4 +1,5 @@
 rootProject.name = 'exeqt'
 include 'core'
 include 'rxjava-adapter'
+include 'vertx-jdbc-binding'
 

@@ -1,0 +1,5 @@
+dependencies {
+    compile project(':core')
+    // https://mvnrepository.com/artifact/io.vertx/vertx-jdbc-client
+    compile group: 'io.vertx', name: 'vertx-jdbc-client', version: '3.5.3'
+}
