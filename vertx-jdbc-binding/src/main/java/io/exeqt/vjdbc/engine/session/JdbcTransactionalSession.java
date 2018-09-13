@@ -1,4 +1,4 @@
-package io.exeqt.vjdbc.engine.execution.result;
+package io.exeqt.vjdbc.engine.session;
 
 import io.exeqt.engine.execution.Query;
 import io.exeqt.engine.execution.result.ModificationResult;
@@ -6,7 +6,7 @@ import io.exeqt.engine.execution.result.Row;
 import io.exeqt.engine.rx.Completion;
 import io.exeqt.engine.session.TransactionalSession;
 import io.exeqt.engine.tx.TransactionAttributes;
-import io.exeqt.rxjava.adapter.CompletableCompletionAdapter;
+import io.exeqt.vjdbc.engine.rx.CompletableCompletionAdapter;
 
 import java.util.concurrent.Flow;
 
@@ -30,12 +30,12 @@ public class JdbcTransactionalSession implements TransactionalSession {
 
     @Override
     public Completion commit() {
-        return CompletableCompletionAdapter.fromCompletable(session.getRawConnection().rxCommit());
+        return new CompletableCompletionAdapter(session.getRawConnection().rxCommit());
     }
 
     @Override
     public Completion rollback() {
-        return CompletableCompletionAdapter.fromCompletable(session.getRawConnection().rxRollback());
+        return new CompletableCompletionAdapter(session.getRawConnection().rxRollback());
     }
 
     @Override

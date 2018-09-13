@@ -3,12 +3,16 @@ buildscript {
 }
 dependencies {
     compile project(':core')
-    compile project(':rxjava-adapter')
+    // https://mvnrepository.com/artifact/org.reactivestreams/reactive-streams-flow-adapters
+    compile group: 'org.reactivestreams', name: 'reactive-streams-flow-adapters', version: '1.0.2'
     // https://mvnrepository.com/artifact/io.vertx/vertx-core
     compile group: 'io.vertx', name: 'vertx-core', version: "${vertxVersion}"
     // https://mvnrepository.com/artifact/io.vertx/vertx-jdbc-client
     compile group: 'io.vertx', name: 'vertx-jdbc-client', version: "${vertxVersion}"
     // https://mvnrepository.com/artifact/io.vertx/vertx-rx-java2
     compile group: 'io.vertx', name: 'vertx-rx-java2', version: "${vertxVersion}"
+    // https://mvnrepository.com/artifact/org.postgresql/postgresql
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.5'
+
 
 }

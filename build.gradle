@@ -12,8 +12,7 @@ allprojects {
 
     dependencies {
         // https://mvnrepository.com/artifact/org.projectlombok/lombok
-        compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
-
+        compile group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
         // https://mvnrepository.com/artifact/net.bytebuddy/byte-buddy
         testCompile group: 'net.bytebuddy', name: 'byte-buddy', version: '1.8.22'
         // https://mvnrepository.com/artifact/org.spockframework/spock-core

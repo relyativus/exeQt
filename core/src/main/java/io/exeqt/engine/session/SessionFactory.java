@@ -12,7 +12,14 @@ import java.util.function.Function;
  *
  * @author anatolii vakaliuk
  */
-public interface SessionFactory extends AutoCloseable {
+public interface SessionFactory {
+    /**
+     * Release resources encapsulated in session factory. After this method is called
+     * session factory instance should not be used anymore
+     *
+     * @return close completion result
+     */
+    Completion close();
 
     /**
      * Provides a way to execute {@code txSessionExpression} operation within transaction bound.

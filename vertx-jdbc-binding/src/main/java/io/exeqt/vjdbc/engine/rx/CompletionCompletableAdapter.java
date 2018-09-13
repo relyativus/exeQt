@@ -1,9 +1,10 @@
-package io.exeqt.rxjava.adapter;
+package io.exeqt.vjdbc.engine.rx;
 
 import io.exeqt.engine.rx.Completion;
 import io.reactivex.Completable;
 import io.reactivex.CompletableObserver;
 import io.reactivex.disposables.Disposable;
+import lombok.AllArgsConstructor;
 import lombok.Value;
 
 /**
@@ -11,7 +12,7 @@ import lombok.Value;
  *
  * @author anatolii vakaliuk
  */
-@Value(staticConstructor = "fromCompletion")
+@AllArgsConstructor
 public class CompletionCompletableAdapter extends Completable implements Completion {
 
     private final Completion completion;
