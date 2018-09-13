@@ -1,6 +1,6 @@
 package io.exeqt.engine.execution.result;
 
-import java.util.List;
+import java.util.Set;
 
 /**
  * Encapsulates result item row.
@@ -15,7 +15,7 @@ public interface Row {
      *
      * @return list of column names
      */
-    List<String> columnLabels();
+    Set<String> columnLabels();
 
     /**
      * Returns primitive int value for column by name

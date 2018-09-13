@@ -3,12 +3,10 @@ package io.exeqt.vjdbc.engine.execution.result;
 import io.exeqt.engine.execution.conversion.ConversionService;
 import io.exeqt.engine.execution.result.Row;
 import io.vertx.core.json.JsonArray;
-import io.vertx.reactivex.ext.sql.SQLRowStream;
 import lombok.Value;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @author anatolii vakaliuk
@@ -20,8 +18,8 @@ public class ResultSetRowAdapter implements Row {
     private final JsonArray row;
 
     @Override
-    public List<String> columnLabels() {
-        return new ArrayList<>(columnToIndexMapping.keySet());
+    public Set<String> columnLabels() {
+        return columnToIndexMapping.keySet();
     }
 
     @Override
