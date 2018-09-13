@@ -1,8 +1,7 @@
-package io.exeqt.vjdbc.engine;
+package io.exeqt.vjdbc.engine.session;
 
 import io.exeqt.engine.execution.conversion.ConversionService;
 import io.exeqt.engine.session.SessionFactory;
-import io.exeqt.vjdbc.engine.session.JdbcSessionFactory;
 import io.vertx.core.Vertx;
 import io.vertx.ext.jdbc.JDBCClient;
 
